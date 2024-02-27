@@ -1,13 +1,27 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [warna, setWarna] = useState(false);
 
+
+  const getDiscountSpecial = useCallback(() => (''), [])
+  const getTrending = useCallback(() => (''), [])
+  const getCategory = useCallback(() => (''), [])
+
   useEffect(() => {
-    console.log("hallo");
+    getDiscountSpecial()
+  }, []);
+
+  useEffect(() => {
+    getTrending()
+  }, []);
+
+  useEffect(() => {
+    getCategory()
   }, [count]);
+
 
   return (
     <>

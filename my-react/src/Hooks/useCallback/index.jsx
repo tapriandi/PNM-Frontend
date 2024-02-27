@@ -19,7 +19,7 @@ const UseCallbackComponent = () => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => setData(data.products));
-  },[]);
+  }, []);
 
   useEffect(() => {
     GetDataApi();
