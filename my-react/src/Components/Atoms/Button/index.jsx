@@ -1,11 +1,17 @@
 import React from "react";
 
-const Button = ({ title, mode }) => {
+const Button = ({ title, mode, type, onClick }) => {
   switch (mode) {
     case "secondary":
       // code
       return (
-        <button style={{ color: "white", background: "green" }}>{title}</button>
+        <button
+          type={type}
+          onClick={onClick}
+          style={{ color: "white", background: "green" }}
+        >
+          {title}
+        </button>
       );
 
     case "primary-outline":
@@ -16,6 +22,8 @@ const Button = ({ title, mode }) => {
             background: "white",
             border: "1px solid blue",
           }}
+          type={type}
+          onClick={onClick}
         >
           {title}
         </button>
@@ -23,7 +31,13 @@ const Button = ({ title, mode }) => {
 
     default:
       return (
-        <button style={{ color: "white", background: "blue" }}>{title}</button>
+        <button
+          type={type}
+          onClick={onClick}
+          style={{ color: "white", background: "blue" }}
+        >
+          {title}
+        </button>
       );
   }
 };

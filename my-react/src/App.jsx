@@ -1,19 +1,39 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
-import { Button } from "./Components/Atoms";
+import { Avatar, Button, Input } from "./Components/Atoms";
 
 function App() {
+  const [value, setValue] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(username, password);
+  };
+
   return (
     <>
-      <Button title="Hello" />
-      <Button title="Saya" mode="secondary" />
-      <Button title="Naruto" mode="primary-outline" />
+      <h1>{value}</h1>
+      <hr />
+      <br />
+      {/* <br />
+        <br />
+        <div>
+          <Input label="Username" onChange={(e) => setValue(e.target.value)} />
+        </div> 
+      */}
+
+      <form>
+        <Input label="Username" onChange={setUsername} />
+        <Input label="Password" onChange={setPassword} type="password" />
+        <Button title="Login" onClick={handleLogin} />
+      </form>
     </>
   );
 }
 
 export default App;
 
-// avatar
-// title = required, ambil initial 2 character
-// image = 
+// int, float, bigint, text, string, boolean
+//
