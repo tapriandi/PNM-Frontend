@@ -8,12 +8,15 @@ export default function ProductSection(props) {
   let navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`/product/${id}`);
+    navigate(`/products/${id}`);
   };
 
   return (
     <div>
-      <TitleSection title={titleSection} titleMore={titleMore} />
+      <TitleSection
+        title={titleSection}
+        titleMore={titleMore}
+      />
 
       <div className="flex justify-between">
         {data.map((item, index) => (
