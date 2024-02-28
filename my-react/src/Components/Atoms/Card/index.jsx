@@ -1,9 +1,10 @@
 import React from "react";
 
 export default function Card(props) {
-  const { className, image } = props;
+  const { className, image, diKlik } = props;
   return (
     <div
+      onClick={diKlik}
       className={[
         `${className} group h-60 overflow-hidden p-4 border rounded-lg shadow-md cursor-pointer duration-300 hover:shadow-none`,
       ]}

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function DetailProduct() {
   return (
-    <div>Home</div>
+    <div>Detail</div>
   )
 }

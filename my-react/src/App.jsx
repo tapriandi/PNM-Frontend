@@ -1,11 +1,15 @@
-import { useEffect } from "react";
-import { Home } from "./Pages";
+import { DetailProduct, Home, AllProduct } from "./Pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<AllProduct />} />
+        <Route path="/product/:id" element={<DetailProduct />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
