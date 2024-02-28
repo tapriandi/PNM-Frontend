@@ -1,10 +1,10 @@
-import "./App.css";
+import { Home } from "./Pages";
 
 function App() {
   return (
-    <>
-      <h1 className="text-red-500">React JS 3</h1>
-    </>
+    <div>
+      <Home />
+    </div>
   );
 }
 
