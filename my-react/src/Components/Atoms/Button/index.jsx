@@ -1,43 +1,50 @@
 import React from "react";
+import styled from "styled-components";
+
+const Primary = styled.button`
+  color: "white",
+  background: "blue",
+  padding: '10px 20px',
+  fontSize: '16px',
+
+  &:hover {
+    background: lightblue;
+  }
+`;
+
+const Secondary = styled.button({
+  color: "white",
+  background: "green",
+});
+
+const PrimaryOutline = styled.button({
+  color: "blue",
+  background: "white",
+  border: "1px solid blue",
+});
 
 const Button = ({ title, mode, type, onClick }) => {
   switch (mode) {
     case "secondary":
       // code
       return (
-        <button
-          type={type}
-          onClick={onClick}
-          style={{ color: "white", background: "green" }}
-        >
+        <Secondary type={type} onClick={onClick}>
           {title}
-        </button>
+        </Secondary>
       );
 
     case "primary-outline":
       return (
-        <button
-          style={{
-            color: "blue",
-            background: "white",
-            border: "1px solid blue",
-          }}
-          type={type}
-          onClick={onClick}
-        >
+        <PrimaryOutline type={type} onClick={onClick}>
           {title}
-        </button>
+        </PrimaryOutline>
       );
 
     default:
       return (
-        <button
-          type={type}
-          onClick={onClick}
-          style={{ color: "white", background: "blue" }}
-        >
+        <Primary type={type} onClick={onClick}>
           {title}
-        </button>
+        </Primary>
       );
   }
 };

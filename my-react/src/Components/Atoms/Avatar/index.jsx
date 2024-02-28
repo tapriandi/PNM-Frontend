@@ -1,17 +1,17 @@
 import React from "react";
 
+const div = {
+  background: "green",
+  width: "100px",
+  height: "100px",
+  borderRadius: "100%",
+  overflow: "hidden",
+  margin: "5px",
+};
+
 const Avatar = ({ title, image }) => {
   return (
-    <div
-      style={{
-        background: "green",
-        width: "100px",
-        height: "100px",
-        borderRadius: "100%",
-        overflow: "hidden",
-        margin: '5px'
-      }}
-    >
+    <div className="avatar" style={div}>
       {image ? (
         <img
           src={image}
@@ -20,7 +20,9 @@ const Avatar = ({ title, image }) => {
           style={{ width: "100%", height: "100%" }}
         />
       ) : (
-        <p style={{ color: "white", paddingBottom: "5px", fontSize: '30px' }}>{title[0]}</p>
+        <p style={{ color: "white", paddingBottom: "5px", fontSize: "30px" }}>
+          {title[0]}
+        </p>
       )}
     </div>
   );
@@ -28,8 +30,4 @@ const Avatar = ({ title, image }) => {
 
 export default Avatar;
 
-
-
-// 
-
-
+//
