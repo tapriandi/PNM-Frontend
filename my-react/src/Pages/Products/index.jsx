@@ -20,6 +20,7 @@ export default function index() {
   useEffect(() => {
     getProducts();
   }, []);
+  
   return (
     <div className="py-20 px-[10%]">
       <h1 className="pb-10 text-xl font-bold">All Products</h1>

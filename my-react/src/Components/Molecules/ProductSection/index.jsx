@@ -3,7 +3,7 @@ import { Card, TitleSection } from "../../Atoms";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductSection(props) {
-  const { titleSection, titleMore, data } = props;
+  const { titleSection, titleMore, data, clickMore } = props;
 
   let navigate = useNavigate();
 
@@ -16,6 +16,7 @@ export default function ProductSection(props) {
       <TitleSection
         title={titleSection}
         titleMore={titleMore}
+        lihatSemua={clickMore}
       />
 
       <div className="flex justify-between">
