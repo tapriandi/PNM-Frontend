@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function Card(props) {
-  const { className, image, diKlik } = props;
+  const { className, image, diKlik, item } = props;
+
   return (
     <div
       onClick={diKlik}
@@ -9,7 +10,9 @@ export default function Card(props) {
         `${className} group h-60 overflow-hidden p-4 border rounded-lg shadow-md cursor-pointer duration-300 hover:shadow-none`,
       ]}
     >
-      <img src={image} className="w-full h-full object-cover duration-300 object-center group-hover:scale-95" />
+      <img src={image} className="w-full h-36 object-contain duration-300 object-center group-hover:scale-95" />
+      {/* <p>{item.title}</p>
+      <p>{item.price}</p> */}
     </div>
   );
 }

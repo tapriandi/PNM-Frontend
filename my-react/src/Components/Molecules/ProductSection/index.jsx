@@ -23,6 +23,7 @@ export default function ProductSection(props) {
         {data.map((item, index) => (
           <Card
             key={index}
+            item={item}
             className="w-[16%]"
             image={item.image}
             diKlik={() => handleClick(item.id)}

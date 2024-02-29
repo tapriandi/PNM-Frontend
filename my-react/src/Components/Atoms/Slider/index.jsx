@@ -4,11 +4,10 @@ import "swiper/css";
 
 export default function Slider() {
   return (
-    // <div className='w-full h-60 my-10 bg-gray-200'></div>
     <Swiper
       autoplay
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <img src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/2/26/422556db-6902-47a1-b14a-d1eca16a9bda.jpg.webp?ect=4g" />

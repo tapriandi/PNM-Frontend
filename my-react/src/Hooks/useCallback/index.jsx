@@ -25,8 +25,6 @@ const UseCallbackComponent = () => {
     GetDataApi();
   }, []);
 
-  console.log(data);
-
   return (
     <div className="functional-app">
       <h1>UseCallbackComponent</h1>
