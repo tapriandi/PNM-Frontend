@@ -7,19 +7,15 @@ export default function index() {
   const route = useRoute();
   const navigation = useNavigation();
 
-  const {id, name} = route.params;
-
-  const getProduct = useCallback(() => {
-    fetch('https://fakestoreapi.com/products/1')
-      .then(res => res.json())
-      .then(json => setProduct(json));
-  }, []);
+  const {id} = route.params;
 
   useEffect(() => {
-    getProduct();
-  }, [route]);
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res => res.json())
+      .then(json => setProduct(json));
+  }, [id]);
 
-  console.log(product.image);
+  console.log(product)
 
   return (
     <View style={styles.container}>
@@ -29,13 +25,12 @@ export default function index() {
       </TouchableOpacity>
 
       <View>
-        <Image
-          source={{
-            uri: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-          }}
+        <Image source={{uri: product?.image}} style={styles.banner} />
+        {/* <Image
+          source={{uri: product.image}}
           style={styles.banner}
           resizeMode="center"
-        />
+        /> */}
       </View>
     </View>
   );
@@ -50,6 +45,6 @@ const styles = StyleSheet.create({
   },
   banner: {
     width: '100%',
-    height: 200,
+    height: '70%',
   },
 });

@@ -1,11 +1,18 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Pressable} from 'react-native';
 
 export default function index({title}) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.titleSection}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.title}>see</Text>
+      <Text style={[styles.title, {fontWeight: 'bold'}]}>{title}</Text>
+      <Pressable
+        style={styles.title}
+        onPress={() => navigation.navigate('Product')}>
+        <Text>see</Text>
+      </Pressable>
     </View>
   );
 }
@@ -17,7 +24,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: 'bold',
     paddingVertical: 10,
   },
 });

@@ -25,7 +25,7 @@ function App() {
           name="ProductDetail"
           component={ProductDetailScreen}
           options={{headerShown: false}}
-          initialParams={{id: 1, name: 'test'}}
+          initialParams={{id: 1}}
         />
       </Stack.Navigator>
     </NavigationContainer>

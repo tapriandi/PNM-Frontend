@@ -1,5 +1,5 @@
-import {Button, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import {useCallback, useEffect, useState} from 'react';
+import {Button, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Card, TitleSection} from '../../components/Atoms';
 
@@ -7,14 +7,13 @@ export default function index() {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
 
-  const getProducts = useCallback(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(json => setData(json.slice(0, 3)));
-  }, []);
-
   useEffect(() => {
-    getProducts();
+    fetch(`https://fakestoreapi.com/products`)
+      .then(res => res.json())
+      .then(json => {
+        const _data = json.slice(0, 3);
+        setData(_data);
+      });
   }, []);
 
   return (
@@ -36,11 +35,19 @@ export default function index() {
           <TitleSection title="All Products" />
           <View style={styles.wrap}>
             {data.map((item, idx) => (
-              <Card key={idx} item={item} />
+              <Card key={idx} item={item} style={{width: '30%'}} />
             ))}
           </View>
         </View>
 
+        <View>
+          <TitleSection title="All Products" />
+          <View style={styles.wrap}>
+            {data.map((item, idx) => (
+              <Card key={idx} item={item} style={{width: '30%'}} />
+            ))}
+          </View>
+        </View>
       </>
     </ScrollView>
   );
