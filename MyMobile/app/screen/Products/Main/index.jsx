@@ -29,7 +29,10 @@ export default function index() {
       <FlatList
         data={data}
         numColumns={2}
-        renderItem={({item}) => <Card item={item} style={{width: '48%', margin: '1%'}} />}
+        style={{paddingBottom: 50}}
+        renderItem={({item}) => (
+          <Card item={item} style={{width: '48%', margin: '1%'}} />
+        )}
         keyExtractor={item => item.id}
       />
     </View>
@@ -38,9 +41,10 @@ export default function index() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 20,
+    paddingTop: 20,
     paddingHorizontal: '5%',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    paddingBottom: 20
   },
   row: {
     flexDirection: 'row',
