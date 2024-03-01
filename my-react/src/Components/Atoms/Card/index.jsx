@@ -10,9 +10,14 @@ export default function Card(props) {
         `${className} group h-60 overflow-hidden p-4 border rounded-lg shadow-md cursor-pointer duration-300 hover:shadow-none`,
       ]}
     >
-      <img src={image} className="w-full h-36 object-contain duration-300 object-center group-hover:scale-95" />
-      {/* <p>{item.title}</p>
-      <p>{item.price}</p> */}
+      <img
+        src={image}
+        className="w-full h-40 object-contain duration-300 object-center group-hover:scale-95"
+      />
+      <div className="pt-2">
+        <p className="truncate text-sm">{item.title}</p>
+        <p className="text-black">${item.price}</p>
+      </div>
     </div>
   );
 }

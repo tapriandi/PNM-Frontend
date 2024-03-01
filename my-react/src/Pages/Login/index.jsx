@@ -1,9 +1,20 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../../service/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    dispatch(login(data));
+    localStorage.setItem("isAuthenticated", true);
+    localStorage.setItem("user", JSON.stringify(data));
+    navigate("/");
+  };
 
   return (
     <div className="flex justify-center items-center w-full h-screen">
