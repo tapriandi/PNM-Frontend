@@ -27,6 +27,7 @@ function App() {
         <Route path="/products" element={<AllProduct />} />
         <Route path="/products/terlaris" element={<AllProduct />} />
         <Route path="/products/favorit" element={<AllProduct />} />
+        {/*  cara 1 */}
         <Route
           path="/products/:productId"
           element={
@@ -35,7 +36,8 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route element={<PrivateWrapper auth={{ isAuthenticated: true }} />}>
+        {/*  cara 1 */}
+        <Route element={<PrivateWrapper auth={{ isAuthenticated: isAuth }} />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
